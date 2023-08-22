@@ -36,12 +36,6 @@ class MyApp extends StatelessWidget {
            BlocProvider<ButtonCubitCubit>(
           create: (BuildContext context) => ButtonCubitCubit(),)
         ],
-
-        ///chips
-      // child:MultiBlocProvider(
-      //   providers: [
-      //      BlocProvider<ChipsCubitCubit>(
-      //     create: (BuildContext context) => ChipsCubitCubit(),)
         
 
         child: MaterialApp(
@@ -49,7 +43,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.red,
           ),
-          home: passWcubit(),
+          home: RadioScreen(),
         ),
       ),
     );
