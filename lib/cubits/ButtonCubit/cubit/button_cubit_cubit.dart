@@ -4,21 +4,13 @@ import 'package:meta/meta.dart';
 part 'button_cubit_state.dart';
 
 class ButtonCubitCubit extends Cubit<ButtonCubitState> {
-   ButtonCubitCubit() : super(unseclectedButton());
+   ButtonCubitCubit() : super(   ButtonCubitInitial());
 
-  void selectButton(){
+   int currentValue = 0;
 
-    emit(seclectedButton());
+  void toggleRadios(value) {
+    currentValue = value;
+    emit(ButtonCubitInitial());
   }
-  
-  void unselectButton(){
-
-    emit(unseclectedButton());
-  }
-
-
-  
-
-
 }
 

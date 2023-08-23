@@ -23,13 +23,11 @@ class RadioScreen extends StatelessWidget {
                   title: Text('Radio $index'),
                   leading: Radio(
                     value: index,
-                    groupValue: state == seclectedButton ? index : null,
+                    groupValue:context.read<ButtonCubitCubit>().currentValue,
+
                     onChanged: (value) {
-                      if (state == seclectedButton) {
-                        context.read<ButtonCubitCubit>().unselectButton();
-                      } else {
-                        context.read<ButtonCubitCubit>().selectButton();
-                      }
+                       context.read<ButtonCubitCubit>()
+                       .toggleRadios(value);
                     },
                   ),
                 );
